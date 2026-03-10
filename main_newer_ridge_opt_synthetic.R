@@ -6,7 +6,7 @@ library(doParallel)
 library(PSweight)
 
 # Load synthetic data
-mydf <- read.csv("/Synthetic_Replication_Data.csv", stringsAsFactors = TRUE)
+mydf <- read.csv("./Synthetic_Replication_Data.csv", stringsAsFactors = TRUE)
 mydf[which(mydf$YearStart == 2015),'YearStart'] <- 2016
 mydf$MonthStart <- factor(mydf$MonthStart)
 mydf$YearStart <- factor(mydf$YearStart)
@@ -193,3 +193,4 @@ placebo_tab <- calc_stats(boot_placebo, placebo_est)
 print("Placebo Check Results (Should be non-significant):")
 
 print(placebo_tab)
+
