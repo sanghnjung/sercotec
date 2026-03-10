@@ -50,7 +50,7 @@ run_pds <- function(df, y_name, d_name, x_vars, family = "gaussian") {
 
 # --- 3. Pre-processing ---
 # Same cleaning logic as your IPW/ATO code
-mydf <- read.csv("/Synthetic_Replication_Data.csv", stringsAsFactors = TRUE)
+mydf <- read.csv("./Synthetic_Replication_Data.csv", stringsAsFactors = TRUE)
 mydf[which(mydf$YearStart == 2015),'YearStart'] <- 2016
 mydf$MonthStart <- factor(mydf$MonthStart)
 mydf$YearStart <- factor(mydf$YearStart)
@@ -97,4 +97,5 @@ falsification_results <- run_pds(
 )
 
 print(falsification_results$results)
+
 
